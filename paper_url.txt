@@ -1,0 +1,120 @@
+﻿Refreshing Content for CTR Gains
+A Data-Driven Approach Using the FlyRank ML Internship Dataset
+________________
+
+
+Abstract
+This study investigates whether content performance can be improved through targeted refresh strategies. Using the FlyRank ML Internship dataset, we model the relationship between content features and click-through rate (CTR). A supervised learning approach is applied and evaluated against a baseline using a random train-test split. The model demonstrates improved CTR prediction performance compared to the baseline. Findings suggest that refreshing high-potential content can systematically increase engagement, offering a practical decision-support framework.
+________________
+
+
+1. Introduction / Problem Statement
+Content teams continuously face the decision: which pages should be refreshed to maximize impact?
+Refreshing all content is inefficient, while ignoring aging content leads to declining performance. This work supports the decision of prioritizing content refresh efforts by identifying which pages are most likely to yield CTR improvements.
+The goal:
+Build a model that predicts CTR and identifies high-potential content for refresh.
+________________
+
+
+2. Data
+Dataset: Refresh Queue Sample (FlyRank ML Internship)
+Source: Public internship dataset
+Unit of Analysis:
+* One row per content item
+Key Fields Used:
+* Features: impressions, clicks, content age, word count, engagement metrics, trend indicators
+* Label: CTR (click-through rate)
+* Context: content type, intent, competition level
+Time Windows:
+* 30-day and 90-day aggregated metrics
+Exclusions:
+* Rows with missing critical metrics (CTR, impressions)
+* Extremely low-impression content (to reduce noise)
+Why exclusions matter:
+Low-signal data can distort model learning and lead to misleading recommendations.
+________________
+
+
+3. Methodology
+Assumptions
+* Past performance trends can predict future CTR
+* Content characteristics (length, freshness, engagement) influence CTR
+* Aggregated metrics are sufficient proxies for performance
+Feature Design
+* Engagement signals (scroll rate, session metrics)
+* Visibility signals (impressions, position tiers)
+* Freshness signals (content age, last update)
+* Trend indicators (growth/decline patterns)
+Label Definition
+* CTR = clicks / impressions
+Baseline
+* Median CTR by position/impression tier
+Model Approach
+* Supervised learning model trained to predict CTR
+Validation Design
+* Random train-test split
+Leakage Checks
+* Ensured no future information leaks into training
+* Only historical aggregated metrics used
+________________
+
+
+4. Results
+Key Finding
+The model outperformed the baseline in predicting CTR, indicating that feature-driven insights provide better guidance than simple heuristics.
+Interpretation
+* CTR is not random—it is explainable through measurable signals
+* Content characteristics + engagement patterns improve prediction accuracy
+Practical Meaning
+* Instead of guessing, teams can rank content by expected CTR improvement potential
+________________
+
+
+5. Limitations & Honest Framing
+* Results are observational, not causal
+* Random split does not simulate real-time deployment
+* Dataset scope limits generalization beyond similar content ecosystems
+* Model outputs should be used for decision support, not automation
+________________
+
+
+6. Ranked Recommendations
+Primary Action
+Refresh high-potential content
+How to Identify It
+Focus on content with:
+* High impressions but low CTR
+* Declining trends
+* Older content age
+* Strong engagement signals but weak clicks
+Action Playbook
+1. Update titles and meta descriptions
+2. Improve content structure and clarity
+3. Align content with user intent
+4. Add fresh information and examples
+5. Re-optimize keywords and headings
+Expected Outcome
+* Improved CTR
+* Better visibility and ranking signals
+* Increased user engagement
+________________
+
+
+7. Reproducibility
+* Dataset: Refresh Queue Sample
+* Code & notebooks: (Add your GitHub link here)
+* Model pipeline: feature engineering → training → evaluation
+Steps to reproduce:
+1. Load dataset
+2. Clean and filter rows
+3. Engineer features
+4. Train model
+5. Compare against baseline
+________________
+
+
+8. Acknowledgments & Data Credit
+Built on the FlyRank ML Internship dataset.
+Data source: https://flyrank.ai
+Crediting the dataset follows standard research practice and ensures transparency in real-world data usage.
+________________
