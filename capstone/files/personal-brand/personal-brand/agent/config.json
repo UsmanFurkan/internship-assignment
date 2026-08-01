@@ -1,0 +1,12 @@
+{
+  "ownerName": "Your Name",
+  "digestRecipient": "you@example.com",
+  "researchTopics": [
+    "new open-weight LLM releases this week",
+    "notable agentic AI / tool-use engineering posts",
+    "RAG and retrieval evaluation techniques"
+  ],
+  "notesFile": "data/notes.md",
+  "draftsDir": "data/drafts",
+  "maxResearchTopicsPerRun": 3
+}

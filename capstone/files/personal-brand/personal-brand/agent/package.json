@@ -1,0 +1,14 @@
+{
+  "name": "personal-agent",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "brief": "node index.mjs brief",
+    "ask": "node index.mjs ask"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.32.1",
+    "dotenv": "^16.4.5"
+  }
+}
